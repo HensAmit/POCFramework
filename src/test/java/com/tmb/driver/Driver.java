@@ -1,29 +1,23 @@
 package com.tmb.driver;
 
+import com.tmb.utils.ConfigLoader;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.util.Objects;
 
-public class Driver {
+public final class Driver {
 
-    private static WebDriver driver;
+    private Driver(){}
 
-    public static void initDriver(){
-        if(Objects.isNull(driver)){
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
-            DriverManager.setDriver(driver);
-            DriverManager.getDriver().manage().window().maximize();
-            DriverManager.getDriver().get("https://www.google.co.in");
-        }
+    public static void initDriver() {
+        WebDriverManager.chromedriver().setup();
+        DriverManager.setDriver(new ChromeDriver());
+        DriverManager.getDriver().manage().window().maximize();
+        DriverManager.getDriver().get(ConfigLoader.getInstance().getUrl());
     }
 
-    public static void quitDriver(){
-        if(Objects.nonNull(driver)){
-            DriverManager.getDriver().quit();
-            DriverManager.unload();
-        }
+    public static void quitDriver() {
+        DriverManager.getDriver().quit();
+        DriverManager.unload();
     }
 }
