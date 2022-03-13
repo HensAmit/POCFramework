@@ -3,24 +3,24 @@ package com.tmb.pages;
 import com.tmb.driver.DriverManager;
 import org.openqa.selenium.By;
 
-public final class LoginPage {
+public final class LoginPage extends BasePage{
 
     private final By fldUserName = By.id("txtUsername");
     private final By fldPassword = By.id("txtPassword");
     private final By btnLogin = By.id("btnLogin");
 
     public LoginPage enterUsername(String username){
-        DriverManager.getDriver().findElement(fldUserName).sendKeys("Admin");
+        sendKeys(fldUserName, username);
         return this;
     }
 
     public LoginPage enterPassword(String password){
-        DriverManager.getDriver().findElement(fldPassword).sendKeys("admin123");
+        sendKeys(fldPassword, password);
         return this;
     }
 
     public HomePage clickLoginBtn(){
-        DriverManager.getDriver().findElement(btnLogin).click();
+        click(btnLogin);
         return new HomePage();
     }
 }
