@@ -1,19 +1,15 @@
 package com.tmb.tests;
 
-import com.tmb.driver.DriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
+import com.tmb.pages.HomePage;
+import com.tmb.pages.LoginPage;
 import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest{
 
     @Test
-    public void test1(){
-        DriverManager.getDriver().findElement(By.name("q")).sendKeys("nobroker", Keys.ENTER);
-    }
-
-    @Test
-    public void test5(){
-        DriverManager.getDriver().findElement(By.name("q")).sendKeys("selenium", Keys.ENTER);
+    public void loginTest(){
+        LoginPage loginPage = new LoginPage();
+        HomePage homePage = loginPage.enterUsername("Admin").enterPassword("admin123").clickLoginBtn();
+        homePage.clickLinkWelcome().clickLogout();
     }
 }
