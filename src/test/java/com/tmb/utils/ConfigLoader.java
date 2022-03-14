@@ -27,4 +27,13 @@ public class ConfigLoader {
             throw new RuntimeException("url is null in the properties file.");
         }
     }
+
+    public String getRetryYesOrNo(){
+        String retryFailedTests = properties.getProperty("retryFailedTests");
+        if(retryFailedTests!=null){
+            return retryFailedTests;
+        } else{
+            throw new RuntimeException("retryFailedTests is null in the properties file.");
+        }
+    }
 }
