@@ -1,5 +1,6 @@
 package com.tmb.pages;
 
+import com.tmb.constants.FrameworkConstants;
 import com.tmb.driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,7 +10,7 @@ import java.time.Duration;
 
 public class BasePage {
 
-    protected WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10));
+    protected WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(FrameworkConstants.getWaitTimeInSeconds()));
 
     public String getTitle(){
         return DriverManager.getDriver().getTitle();
