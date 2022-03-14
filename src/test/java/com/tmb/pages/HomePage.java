@@ -8,12 +8,12 @@ public class HomePage extends BasePage{
     private final By linkLogOut = By.xpath("//a[text()='Logout']");
 
     public HomePage clickLinkWelcome(){
-        click(linkWelcome);
+        click(linkWelcome, "Welcome Link");
         return this;
     }
 
     public LoginPage clickLogout(){
-        click(linkLogOut);
+        click(linkLogOut, "Logout link");
         return new LoginPage();
     }
 }

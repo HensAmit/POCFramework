@@ -45,6 +45,12 @@ public class DataProviderManager {
             }
             data[i-1][0] = map;
         }
+        try {
+            workbook.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException("UNABLE TO CLOSE WORKBOOK : "+xlsxFilePath);
+        }
         return data;
     }
 }

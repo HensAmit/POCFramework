@@ -10,17 +10,17 @@ public final class LoginPage extends BasePage{
     private final By btnLogin = By.id("btnLogin");
 
     public LoginPage enterUsername(String username){
-        sendKeys(fldUserName, username);
+        sendKeys(fldUserName, username, "username field");
         return this;
     }
 
     public LoginPage enterPassword(String password){
-        sendKeys(fldPassword, password);
+        sendKeys(fldPassword, password, "password field");
         return this;
     }
 
     public HomePage clickLoginBtn(){
-        click(btnLogin);
+        click(btnLogin, "Login button");
         return new HomePage();
     }
 }
