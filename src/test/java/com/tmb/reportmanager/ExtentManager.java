@@ -15,8 +15,4 @@ public final class ExtentManager {
     static void setExtentTest(ExtentTest exTest){
         extentTestTL.set(exTest);
     }
-
-    static void unload(){
-        extentTestTL.remove();
-    }
 }
