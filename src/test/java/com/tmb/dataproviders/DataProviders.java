@@ -22,6 +22,6 @@ public class DataProviders {
 
     @DataProvider (parallel = true)
     public static Object[][] homePageTest2Data(){
-        return DataProviderManager.getDataProvider(FrameworkConstants.getHomePageTestExcelFilePath(),"homePageTest1");
+        return DataProviderManager.getDataProvider(FrameworkConstants.getHomePageTestExcelFilePath(),"homePageTest2");
     }
 }

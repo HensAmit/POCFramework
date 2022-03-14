@@ -12,8 +12,8 @@ public class HomePageTest extends BaseTest{
     @Test (dataProvider = "homePageTest1Data", dataProviderClass = DataProviders.class)
     public void homePageTest1(Map<String, String> data){
         String title = new LoginPage()
-                .enterUsername("Admin")
-                .enterPassword("admin123")
+                .enterUsername(data.get("username"))
+                .enterPassword(data.get("password"))
                 .clickLoginBtn()
                 .clickLinkWelcome()
                 .clickLogout()
@@ -26,8 +26,8 @@ public class HomePageTest extends BaseTest{
     @Test (dataProvider = "homePageTest2Data", dataProviderClass = DataProviders.class)
     public void homePageTest2(Map<String, String> data){
         String title = new LoginPage()
-                .enterUsername("Admin")
-                .enterPassword("admin123")
+                .enterUsername(data.get("username"))
+                .enterPassword(data.get("password"))
                 .clickLoginBtn()
                 .clickLinkWelcome()
                 .clickLogout()
