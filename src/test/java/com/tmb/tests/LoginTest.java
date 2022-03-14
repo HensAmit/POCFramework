@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class LoginTest extends BaseTest{
 
-    @Test (dataProvider = "loginTest1Data", dataProviderClass = DataProviders.class)
+    @Test (dataProvider = "loginTest1Data")
     public void loginTest1(Map<String, String> data){
         String title = new LoginPage()
                 .enterUsername(data.get("username"))
@@ -23,7 +23,7 @@ public class LoginTest extends BaseTest{
         System.out.println(data.get("field2"));
     }
 
-    @Test (dataProvider = "loginTest2Data", dataProviderClass = DataProviders.class)
+    @Test (dataProvider = "loginTest2Data")
     public void loginTest2(Map<String, String> data){
         String title = new LoginPage()
                 .enterUsername(data.get("username"))
