@@ -1,10 +1,7 @@
 package com.tmb.reportmanager;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
-import com.tmb.driver.DriverManager;
 import com.tmb.helper.Helper;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 
 public final class ExtentLogger {
 
@@ -23,7 +20,7 @@ public final class ExtentLogger {
     }
 
     public static void skip(String message){
-        ExtentManager.getExtentTest().skip(message);
+        ExtentManager.getExtentTest().skip(message, MediaEntityBuilder.createScreenCaptureFromBase64String(Helper.getScreenShot()).build());
     }
 
     public static void info(String message){

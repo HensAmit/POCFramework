@@ -4,6 +4,7 @@
     <listeners>
         <listener class-name="com.tmb.listeners.Listener"/>
         <listener class-name="com.tmb.listeners.MethodInterceptor"/>
+        <listener class-name="com.tmb.listeners.AnnotationTransformer"/>
     </listeners>
     <test name="Test1" parallel="methods" thread-count="2">
         <classes>
