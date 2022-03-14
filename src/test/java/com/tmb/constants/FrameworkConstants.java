@@ -11,6 +11,7 @@ public final class FrameworkConstants {
     private static final String LOGINTEST_EXCEL_FILE_PATH = "src//test//java//com//tmb//dataproviders//inputexcels//LoginTestDataProvider.xlsx";
     private static final String HOMEPAGETEST_EXCEL_FILE_PATH = "src//test//java//com//tmb//dataproviders//inputexcels//HomePageTestDataProvider.xlsx";
     private static final String REPORT_PATH = "test-result//"+Helper.getCurrentTimeStamp()+"-report//index.html";
+    private static final String RUNNER_EXCEL_PATH = "src//test//java//com//tmb//dataproviders//inputexcels//1_RunManager.xlsx";
 
     public static String getConfigFilePath(){
         return CONFIG_FILE_PATH;
@@ -30,5 +31,9 @@ public final class FrameworkConstants {
 
     public static String getReportPath(){
         return REPORT_PATH;
+    }
+
+    public static String getRunnerExcelPath(){
+        return RUNNER_EXCEL_PATH;
     }
 }

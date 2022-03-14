@@ -18,6 +18,7 @@ public class Listener implements ITestListener, ISuiteListener {
 
     public void onTestStart(ITestResult result) {
         ExtentReport.createTest(result.getMethod().getMethodName());
+        ExtentLogger.info("DESCRIPTION : "+result.getMethod().getDescription());
     }
 
     public void onTestSuccess(ITestResult result) {
