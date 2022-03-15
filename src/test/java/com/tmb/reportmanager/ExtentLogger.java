@@ -12,7 +12,11 @@ public final class ExtentLogger {
     }
 
     public static void fail(String message, boolean takeScreenshot){
-        ExtentManager.getExtentTest().fail(message, MediaEntityBuilder.createScreenCaptureFromBase64String(Helper.getScreenShot()).build());
+        if(takeScreenshot){
+            ExtentManager.getExtentTest().fail(message, MediaEntityBuilder.createScreenCaptureFromBase64String(Helper.getScreenShot()).build());
+        } else{
+            fail(message);
+        }
     }
 
     public static void fail(String message){

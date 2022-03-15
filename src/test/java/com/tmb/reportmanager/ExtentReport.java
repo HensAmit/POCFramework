@@ -1,7 +1,6 @@
 package com.tmb.reportmanager;
 
 import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.tmb.constants.FrameworkConstants;
@@ -27,5 +26,11 @@ public final class ExtentReport {
 
     public static void flushReports(){
         extent.flush();
+    }
+
+    public static void addCategories(String[] categories){
+        for(String category : categories){
+            ExtentManager.getExtentTest().assignCategory(category);
+        }
     }
 }

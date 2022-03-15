@@ -3,8 +3,8 @@ package com.tmb.listeners;
 import com.tmb.reportmanager.ExtentLogger;
 import com.tmb.reportmanager.ExtentReport;
 import org.testng.*;
+import org.testng.annotations.Test;
 
-import java.util.Arrays;
 
 public class Listener implements ITestListener, ISuiteListener {
 
@@ -19,6 +19,7 @@ public class Listener implements ITestListener, ISuiteListener {
     public void onTestStart(ITestResult result) {
         ExtentReport.createTest(result.getMethod().getMethodName());
         ExtentLogger.info("DESCRIPTION : "+result.getMethod().getDescription());
+        ExtentReport.addCategories(result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(Test.class).groups());
     }
 
     public void onTestSuccess(ITestResult result) {
