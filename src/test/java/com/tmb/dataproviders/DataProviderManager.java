@@ -13,7 +13,7 @@ import java.util.Map;
 public class DataProviderManager {
     public static Object[][] getDataProvider(String xlsxFilePath, String sheetName){
         File file = new File(xlsxFilePath);
-        FileInputStream fis = null;
+        FileInputStream fis;
         try {
             fis = new FileInputStream(file);
         } catch (FileNotFoundException e) {
@@ -21,7 +21,7 @@ public class DataProviderManager {
             throw new RuntimeException("FILE NOT FOUND AT : "+xlsxFilePath);
         }
 
-        XSSFWorkbook workbook = null;
+        XSSFWorkbook workbook;
         try {
             workbook = new XSSFWorkbook(fis);
         } catch (IOException e) {

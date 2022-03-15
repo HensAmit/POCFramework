@@ -1,6 +1,5 @@
 package com.tmb.tests;
 
-import com.tmb.dataproviders.DataProviders;
 import com.tmb.pages.LoginPage;
 import static org.assertj.core.api.Assertions.*;
 import org.testng.annotations.Test;
