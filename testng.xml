@@ -7,6 +7,11 @@
         <listener class-name="com.tmb.listeners.AnnotationTransformer"/>
     </listeners>
     <test name="Test1" parallel="methods" thread-count="2">
+        <groups>
+            <run>
+                <include name="Priority_1"/>
+            </run>
+        </groups>
         <classes>
             <class name="com.tmb.tests.LoginTest"/>
             <class name="com.tmb.tests.HomePageTest"/>

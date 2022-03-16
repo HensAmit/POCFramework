@@ -8,13 +8,13 @@ import java.util.Map;
 
 public class BaseTest {
 
-    @BeforeMethod
+    @BeforeMethod (alwaysRun = true)
     public void setUp(Object[] data){
         Map<String,String> map = (Map<String,String>)data[0];
         Driver.initDriver(map.get("browser"));
     }
 
-    @AfterMethod
+    @AfterMethod (alwaysRun = true)
     public void tearDown(){
         Driver.quitDriver();
     }

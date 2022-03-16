@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 public class HomePage extends BasePage{
 
     private final By linkWelcome = By.id("welcome");
-    private final By linkLogOut = By.xpath("//a[text()='Déconnexion']");
+    private final By linkLogOut = By.xpath("//a[text()='Logout']");
 
     public HomePage clickLinkWelcome(){
         click(linkWelcome, "Welcome Link");
